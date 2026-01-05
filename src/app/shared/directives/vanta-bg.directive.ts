@@ -1,6 +1,8 @@
 import { Directive, ElementRef, OnInit, OnDestroy, Inject, PLATFORM_ID, NgZone } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import * as THREE from 'three';
+
+declare const THREE: any;
+declare const VANTA: any;
 
 @Directive({
   selector: '[appVantaBg]',
@@ -18,12 +20,8 @@ export class VantaBgDirective implements OnInit, OnDestroy {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.ngZone.runOutsideAngular(() => {
-
-        import('vanta/dist/vanta.net.min').then((vantaLib) => {
-
-          const vanta = vantaLib.default || vantaLib;
-
-          this.vantaEffect = vanta({
+        try {
+          this.vantaEffect = VANTA.NET({
             el: this.el.nativeElement,
             mouseControls: true,
             touchControls: true,
@@ -43,7 +41,9 @@ export class VantaBgDirective implements OnInit, OnDestroy {
             showDots: true,
             THREE: THREE
           });
-        }).catch(err => console.error('Error cargando Vanta:', err));
+        } catch (error) {
+          console.error('Error iniciando Vanta:', error);
+        }
       });
     }
   }
