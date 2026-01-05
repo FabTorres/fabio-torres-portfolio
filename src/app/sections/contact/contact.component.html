@@ -1,0 +1,75 @@
+<section class="contact-section">
+
+  <div class="contact-overlay"></div>
+
+  <div class="container">
+
+    <div class="header-center">
+      <h2 class="section-title" data-aos="fade-up">Contacto</h2>
+      <p class="subtitle" data-aos="fade-up" data-aos-delay="200">
+        ¿Buscás potenciar tu equipo con soluciones robustas? Estoy disponible para nuevos desafíos técnicos o proyectos a medida.
+      </p>
+    </div>
+
+    <div class="contact-card" data-aos="zoom-in" data-aos-delay="100">
+
+      <div class="form-wrapper">
+        <div class="form-header">
+          <h3>Hablemos</h3>
+          <span class="share-icon"><i class="bi bi-share"></i></span>
+        </div>
+        <p class="form-desc">¿Tenés algún proyecto en mente? Mandame un mensaje y charlemos.</p>
+
+        <form [formGroup]="contactForm" (ngSubmit)="send()">
+
+          <div class="input-group">
+            <span class="input-icon"><i class="bi bi-person"></i></span>
+            <input type="text" formControlName="name" placeholder="Tu Nombre" />
+          </div>
+
+          <div class="input-group">
+            <span class="input-icon"><i class="bi bi-envelope"></i></span>
+            <input type="email" formControlName="email" placeholder="Tu Email" />
+          </div>
+
+          <div class="input-group textarea-group">
+            <span class="input-icon top-icon"><i class="bi bi-chat-left-dots"></i></span>
+            <textarea formControlName="message" placeholder="Tu Mensaje" rows="4"></textarea>
+          </div>
+
+          <app-button [label]="isLoading ? 'Enviando...' : 'Enviar Mensaje'" variant="primary"
+            [iconClass]="isLoading ? 'bx bx-loader-alt bx-spin' : 'bi bi-send'" iconPos="right" type="submit"
+            [fullWidth]="true" [disabled]="contactForm.invalid || isLoading">
+          </app-button>
+
+          @if (isSent) {
+          <div class="success-msg fade-in">
+            <i class="bi bi-envelope-check"></i> Mensaje Enviado Correctamente. ¡Gracias por contactarme!
+          </div>
+          }
+        </form>
+      </div>
+
+      <div class="divider">
+        <span>Conectemos</span>
+      </div>
+
+      <div class="social-wrapper">
+        @for (link of socialLinks; track link.name) {
+        <a [href]="link.url" target="_blank" class="social-btn">
+          <div class="icon-box">
+            <i [class]="link.iconClass"></i>
+          </div>
+          <div class="social-info">
+            <h4>{{ link.name }}</h4>
+            <span>{{ link.platform }}</span>
+          </div>
+          <div class="arrow">↗</div>
+        </a>
+        }
+      </div>
+
+    </div>
+
+  </div>
+</section>

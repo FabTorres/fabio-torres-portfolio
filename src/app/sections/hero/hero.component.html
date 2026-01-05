@@ -1,0 +1,50 @@
+<section class="hero-section" id="hero">
+  <div class="spotlight"></div>
+  <div class="overlay-vignette"></div>
+  <div class="container">
+    <div class="hero-content">
+
+      <div class="glass-badge" data-aos="zoom-in">
+        <span class="sparkle-icon">✦</span>
+        <span>Listo para Innovar</span>
+      </div>
+
+      <div class="title-wrapper" data-aos="fade-up" data-aos-delay="100">
+        <h1 class="line-1">Desarrollador</h1>
+        <h1 class="line-2 gradient-text">Full Stack</h1>
+      </div>
+
+      <div class="typing-container" data-aos="fade-up" data-aos-delay="200">
+        <span class="dynamic-text" appTyping [texts]="typingTexts"></span>
+        <span class="blinking-cursor">|</span>
+      </div>
+  
+      <p class="description" data-aos="fade-up" data-aos-delay="300">
+        Transformo ideas complejas en aplicaciones <strong class="white-text">robustas</strong> y<strong
+          class="white-text">escalables</strong>. Con más de 2 años de experiencia, lidero el
+        desarrollo de soluciones críticas combinando la potencia de <strong class="white-text">Java</strong> con la agilidad de <strong class="white-text">Angular</strong>, garantizando
+        siempre un código limpio y orientado a resultados.
+      </p>
+
+      <div class="tech-stack" data-aos="fade-up" data-aos-delay="400">
+        <div class="tech-pill">Angular</div>
+        <div class="tech-pill">Java</div>
+        <div class="tech-pill">Spring Boot</div>
+        <div class="tech-pill">MySQL</div>
+      </div>
+
+      <div class="cta-group" data-aos="fade-up" data-aos-delay="500">
+        <app-button label="Proyectos" variant="primary" iconClass="bi bi-arrow-up-right"
+          (onClick)="scrollToSection('portfolio')">
+        </app-button>
+
+        <app-button label="Contacto" variant="outline" iconClass="bi bi-envelope"
+          (onClick)="scrollToSection('contact')">
+        </app-button>
+      </div>
+
+    </div>
+
+
+  </div>
+</section>

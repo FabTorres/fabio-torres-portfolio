@@ -1,1 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+
+:root {
+  /* --- PALETA DE COLORES PRINCIPALES --- */
+  --color-bg-main: #020202;         /* Fondo principal (casi negro) */
+  --color-bg-card: #0D2818;         /* Fondo secundario para tarjetas/elementos oscuros */
+  --color-primary-dark: #04471C;    /* Verde oscuro para gradientes profundos */
+  --color-primary: #058C42;         /* Verde medio, base de la marca */
+  --color-accent: #16DB65;          /* Verde Neon (Accent / Brillo / Call to Action) */
+
+  /* --- PALETA DE COLORES SECUNDARIA --- */
+  --color-bg-pill: #0a0a0a;
+  --color-bg-pill-light: #ccc;
+  --color-white: #fff;
+
+  /* --- COMPONENTES RGB (para usar con opacidades dinámicas) --- */
+  --color-accent-rgb: 22, 219, 101;     /* RGB de --color-accent */
+  --color-white-rgb: 255, 255, 255;     /* RGB del blanco */
+  --color-black-rgb: 0, 0, 0;           /* RGB del negro puro */
+  --color-bg-main-rgb: 2, 2, 2;         /* RGB de --color-bg-main */
+  --color-bg-card-rgb: 13, 40, 24;      /* RGB de --color-bg-card */
+
+  /* --- NEUTROS & TEXTO --- */
+  --color-text-white: #ffffff;
+  --color-text-dark: #000000;           /* Texto negro puro (para fondos muy claros) */
+  --color-text-gray: #a0a0a0;           /* Gris estándar para descripciones */
+  --color-text-muted: #555555;          /* Gris muy suave */
+  --color-text-description: #888;
+
+  /* --- BORDES Y SOMBRAS COMUNES --- */
+  --border-subtle-light: 1px solid rgba(var(--color-white-rgb), 0.1); /* Borde blanco muy tenue */
+  --border-subtle-medium: 1px solid rgba(var(--color-white-rgb), 0.2); /* Borde blanco medio */
+  --border-accent-subtle: 1px solid rgba(var(--color-accent-rgb), 0.3); /* Borde accent tenue */
+  --shadow-accent-light: 0 0 15px rgba(var(--color-accent-rgb), 0.1);  /* Sombra accent ligera */
+  --shadow-accent-medium: 0 0 30px rgba(var(--color-accent-rgb), 0.4); /* Sombra accent media */
+  --shadow-dark-strong: 0 5px 20px rgba(var(--color-black-rgb), 0.5); /* Sombra oscura fuerte */
+
+  /* --- FUENTES --- */
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-code: 'Courier New', monospace;
+
+  
+  /* === SISTEMA DE ESPACIADO & DIMENSIONES (REM) */
+  /* Base: 1rem = 16px */
+
+  --space-2xs: 0.25rem;  /* 4px */
+  --space-xs:  0.5rem;   /* 8px */
+
+  --space-sm:  0.75rem;  /* 12px */
+  --space-md:  1rem;     /* 16px - BASE */
+  --space-lg:  1.5rem;   /* 24px */
+  
+  --space-xl:  2rem;     /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 5rem;     /* 80px */
+  
+  --space-section: 7.5rem;  /* 120px */
+  --space-hero:    8.75rem; /* 140px */
+}
+
+/* Reset básico y estilos globales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-main);
+  color: var(--color-text-white);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+}
+
+/* Clases de utilidad para colores (opcional) */
+.text-accent { color: var(--color-accent) !important; }
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

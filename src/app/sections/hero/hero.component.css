@@ -1,0 +1,200 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8.75rem 1.25rem var(--space-3xl);
+  overflow: hidden;
+}
+
+.overlay-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 3;
+  max-width: 62.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.glass-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.375rem var(--space-md);
+  background: rgba(var(--color-accent-rgb), 0.08);
+  border: 1px solid rgba(var(--color-accent-rgb), 0.2);
+  border-radius: 50px;
+  color: var(--color-accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 0 20px rgba(var(--color-accent-rgb), 0.1);
+}
+
+.sparkle-icon {
+  font-size: var(--space-md);
+}
+
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  margin-bottom: var(--space-lg);
+}
+
+h1 {
+  font-family: var(--font-main, sans-serif);
+  font-weight: 800;
+  margin: 0;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  letter-spacing: -2px;
+}
+
+.line-1 {
+  color: var(--color-text-white);
+  margin-left: -3px; 
+}
+
+.line-2.gradient-text {
+  margin-left: -3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 15px rgba(var(--color-accent-rgb), 0.1));
+}
+
+.typing-container {
+  font-family: 'Courier New', monospace;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: var(--color-text-gray);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+}
+
+.dynamic-text {
+  color: var(--color-text-white);
+}
+
+.blinking-cursor {
+  color: var(--color-accent);
+  font-weight: bold;
+  animation: blink 1s step-end infinite;
+  margin-left: 0.125rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--color-text-description);
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: var(--space-xl);
+}
+
+.white-text {
+  color: var(--color-text-white);
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.tech-pill {
+  padding: var(--space-xs) 1.25rem;
+  background: var(--color-bg-pill);
+  border: 1px solid #222;
+  border-radius: 30px;
+  color: var(--color-bg-pill-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tech-pill:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-dark-strong);
+}
+
+.cta-group {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: var(--space-section);
+    align-items: flex-start;
+  }
+
+  .container {
+    align-items: center;
+    text-align: center;
+  }
+
+  .tech-stack {
+    justify-content: center;
+  }
+
+  .typing-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.glass-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.375rem var(--space-md);
+  border-radius: 50px;
+  color: var(--color-accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: default;
+  transition: all 0.4s ease;
+
+  background: rgba(var(--color-accent-rgb), 0.05);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(var(--color-accent-rgb), 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.glass-badge:hover {
+  background: rgba(var(--color-accent-rgb), 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(var(--color-accent-rgb), 0.5);
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 25px rgba(var(--color-accent-rgb), 0.2);
+  color: var(--color-white);
+}
