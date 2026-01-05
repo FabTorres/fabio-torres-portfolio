@@ -1,0 +1,32 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="container">
+
+    <div class="logo" (click)="scrollToSection('hero')">
+      Fabio <span class="accent">Torres</span>
+    </div>
+
+    <ul class="nav-links desktop-only">
+      @for (item of navItems; track $index) {
+      <li>
+        <a (click)="scrollToSection(item.sectionId)">{{ item.label }}</a>
+      </li>
+      }
+    </ul>
+
+    <button class="mobile-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <div class="mobile-menu" [class.open]="isMobileMenuOpen">
+      <ul>
+        @for(item of navItems; track $index) {
+        <li>
+          <a (click)="scrollToSection(item.sectionId);">{{ item.label }}</a>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</nav>

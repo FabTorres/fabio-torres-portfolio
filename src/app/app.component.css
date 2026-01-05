@@ -1,0 +1,45 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden; /* Evita desbordes horizontales */
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #16DB65; /* Tu color accent */
+}
+
+p {
+  color: #a0a0a0;
+}
+
+/* Fondo fijo detrás de todo */
+.global-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+/* Oscurece el Vanta un poco globalmente para que no moleste */
+.global-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 2, 2, 0.85); /* 85% oscuridad sobre la red */
+  pointer-events: none;
+}
+
+/* Asegura que main tenga el ancho correcto */
+main {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}

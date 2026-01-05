@@ -1,0 +1,44 @@
+<div class="container">
+
+  <div class="header-content">
+    <h2 class="section-title" data-aos="fade-up">Sobre Mí</h2>
+    <p class="bio-text" data-aos="fade-right">
+      Soy <strong class="text-white">Fabio Torres</strong>, desarrollador Full Stack especializado en el ecosistema <strong class="text-white">Java/Spring Boot y Angular/Ionic</strong>. Mi
+      enfoque principal es la creación de arquitecturas modernas y la optimización de sistemas, con amplia experiencia
+      migrando entornos legacy y resolviendo incidentes críticos en tiempo real.
+      Aunque mi stack principal es Java, mi sólida base en <strong class="text-white">PHP y MySQL</strong> me permite adaptarme a diversos entornos
+      productivos, siempre priorizando las buenas prácticas (SOLID, Clean Code) y la escalabilidad del producto.
+    </p>
+    <div class="cta-group">
+      <app-button data-aos="fade-up" label="Descargar CV" variant="primary" iconClass="bi bi-file-earmark-text"
+        iconPos="left" (onClick)="downloadCV()">
+      </app-button>
+      <app-button data-aos="fade-up" label="Ver Proyectos" variant="outline" iconClass="bx bx-briefcase" iconPos="left"
+        (onClick)="scrollToPortfolio()">
+      </app-button>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    @for (stat of stats; track stat.label) {
+    <div class="card clickable-card" data-aos="zoom-in" [attr.data-aos-delay]="$index * 100"
+      (click)="scrollToPortfolio()">
+
+      <div class="card-top">
+        <div class="icon-circle">
+          <i [class]="stat.iconClass"></i>
+        </div>
+        <span class="stat-value">{{ stat.value }}</span>
+      </div>
+
+      <div class="card-bottom">
+        <h3 class="stat-label">{{ stat.label }}</h3>
+        <p class="stat-desc">{{ stat.desc }}</p>
+      </div>
+
+      <div class="arrow-corner">↗</div>
+    </div>
+    }
+  </div>
+
+</div>

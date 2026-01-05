@@ -1,0 +1,122 @@
+<section class="portfolio-section">
+  <div class="portfolio-overlay"></div>
+
+  <div class="container">
+    <div class="header-center" data-aos="fade-up">
+      <h2 class="section-title">Portafolio</h2>
+      <p class="subtitle">
+        Proyectos reales, experiencia técnica y tecnologías que utilizo en el día a día.
+      </p>
+    </div>
+
+    <div class="tabs-wrapper" data-aos="fade-up" data-aos-delay="100">
+      <div class="tabs-container">
+        <button class="tab-item" [class.active]="activeTab === 'projects'" (click)="setActiveTab('projects')">
+          <span class="tab-icon"><i class="bi bi-code-slash"></i></span> Proyectos
+        </button>
+
+        <button class="tab-item" [class.active]="activeTab === 'certificates'" (click)="setActiveTab('certificates')">
+          <span class="tab-icon"><i class="bi bi-award"></i></span> Certificaciones
+        </button>
+
+        <button class="tab-item" [class.active]="activeTab === 'stack'" (click)="setActiveTab('stack')">
+          <span class="tab-icon"><i class="bi bi-gear"></i></span> Stack Tecnológico
+        </button>
+      </div>
+    </div>
+
+    <div class="content-area">
+      @if (activeTab === 'projects') {
+
+      @if (projects.length === 0) {
+      <div class="empty-state" data-aos="fade-right">
+        <h3>Proyectos en desarrollo</h3>
+        <p>
+          Actualmente me encuentro trabajando en proyectos reales que serán publicados
+          una vez finalizados. Mientras tanto, podés explorar mi stack tecnológico y certificaciones.
+        </p>
+      </div>
+      } @else {
+      <div class="grid-projects fade-in">
+        @for (project of projects; track project.title) {
+        <div class="project-card">
+          <div class="card-image">
+            <div class="img-placeholder">
+              <span>🖥️</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.desc }}</p>
+            <div class="card-actions">
+              <a [href]="project.liveUrl" class="link-btn">Ver demo ↗</a>
+              <a [href]="project.codeUrl" class="details-btn">Ver detalles →</a>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+      }
+
+      }
+
+      @if (activeTab === 'certificates') {
+      <div class="grid-certificates fade-in">
+        @for (cert of certificates; track cert.id) {
+        <div class="cert-card" (click)="openCertificate(cert)" data-aos="zoom-in">
+          <div class="cert-placeholder">
+            <div class="paper">
+              <div class="line title-line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="badge-icon"></div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+      }
+
+      @if (activeTab === 'stack') {
+      <div class="grid-stack fade-in">
+        @for (tech of techStack; track tech.name) {
+        <div class="tech-card" data-aos="zoom-in">
+          <div class="icon-wrapper">
+            <i [class]="tech.iconClass + ' colored'"></i>
+          </div>
+          <span class="tech-name">{{ tech.name }}</span>
+        </div>
+        }
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+@if (selectedCertificate && safePdfUrl) {
+  <div class="modal-backdrop fade-in" (click)="closeModal()">
+    
+    <div class="modal-content pdf-modal" (click)="$event.stopPropagation()">
+      
+      <button class="close-btn" (click)="closeModal()">
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+      <div class="modal-header">
+        <h3>{{ selectedCertificate.title }}</h3>
+      </div>
+
+      <div class="modal-body-pdf">
+        <iframe 
+          [src]="safePdfUrl" 
+          title="Vista previa del certificado"
+          type="application/pdf">
+          <div class="pdf-fallback">
+            <p>Tu navegador no puede visualizar este PDF aquí.</p>
+            <a [href]="safePdfUrl" target="_blank" class="btn btn-primary">Descargar PDF</a>
+          </div>
+        </iframe>
+      </div>
+    </div>
+  </div>
+}

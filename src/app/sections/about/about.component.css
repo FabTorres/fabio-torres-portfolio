@@ -1,0 +1,141 @@
+:host {
+  display: block;
+  padding: var(--space-section) 1.25rem;
+}
+
+.container {
+  max-width: 68.75rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header-content {
+  text-align: center;
+  max-width: 50rem;
+  margin: 0 auto 4.375rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: var(--space-lg);
+  color: var(--color-primary);
+  background: linear-gradient(90deg, var(--color-white) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.bio-text {
+  font-size: 1.1rem;
+  color: var(--color-text-gray);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.text-white {
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.cta-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.card {
+  background-color: var(--color-bg-pill);
+  border: 1px solid #1f1f1f;
+  border-radius: var(--space-md);
+  padding: 1.875rem;
+  position: relative;
+  transition: all 0.3s ease;
+  min-height: 12.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-5px);
+  background-color: #0f1410;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.icon-circle {
+  width: 3.125rem;
+  height: 3.125rem;
+  background: rgba(var(--color-white-rgb) 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--color-bg-pill-light);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 1px;
+  margin-bottom: 0.3125rem;
+  text-transform: uppercase;
+}
+
+.stat-desc {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 400;
+}
+
+.arrow-corner {
+  position: absolute;
+  bottom: 1.5625rem;
+  right: 1.5625rem;
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: translate(-5px, 5px);
+  transition: all 0.3s ease;
+}
+
+.card:hover .arrow-corner {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+@media (max-width: 900px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+.clickable-card {
+  cursor: pointer;
+}

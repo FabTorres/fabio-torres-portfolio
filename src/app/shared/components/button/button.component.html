@@ -1,0 +1,17 @@
+<button 
+  [type]="type" 
+  [class]="'btn btn-' + variant"
+  [class.full-width]="fullWidth"
+  [disabled]="disabled"
+  (click)="handleClick()">
+  
+  @if (iconClass && iconPos === 'left') {
+    <i [class]="iconClass"></i>
+  }
+
+  {{ label }}
+
+  @if (iconClass && iconPos === 'right') {
+    <i [class]="iconClass"></i>
+  }
+</button>
