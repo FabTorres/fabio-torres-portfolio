@@ -34,7 +34,8 @@
               "vanta",
               "three",
               "vanta/dist/vanta.net.min"
-            ]
+            ],
+            "scripts": []
           },
           "configurations": {
             "production": {
