@@ -31,7 +31,7 @@ export class VantaBgDirective implements OnInit, OnDestroy {
             scale: 1.00,
             scaleMobile: 1.00,
 
-            color: 0x16DB65,
+            color: 0xffffff,
             backgroundColor: 0x020202,
 
             points: 6.00,
