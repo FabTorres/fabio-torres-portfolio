@@ -15,19 +15,19 @@ export class AboutComponent {
 
   stats = [
     {
-      value: '4',
+      value: '1',
       label: 'PROYECTOS TOTALES',
       desc: 'Soluciones web y móviles creadas',
       iconClass: 'bi bi-code-slash'
     },
     {
-      value: '1',
+      value: '3',
       label: 'CERTIFICADOS',
       desc: 'Competencias profesionales validadas',
       iconClass: 'bi bi-award'
     },
     {
-      value: '+2.5',
+      value: '3',
       label: 'AÑOS DE EXPERIENCIA',
       desc: 'Trayectoria de aprendizaje continuo',
       iconClass: 'bi bi-briefcase'
